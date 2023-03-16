@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les histoires{% endblock %}
+
+{% block body %}
+    <h1>Liste des histoires</h1>
+<ol>
+    {% for histoire in histoires %}
+    <li><a href="{{ path('app_histoire_p1',{'idHistoire':histoire.id}) }}"> {{ histoire.titre}}</a></li>
+   {% endfor %}
+</ol>
+    
+{% endblock %}

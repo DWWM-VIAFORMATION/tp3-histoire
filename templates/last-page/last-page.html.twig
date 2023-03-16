@@ -1,0 +1,28 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Etape index{% endblock %}
+
+{% block body %}<h1>Droits d'auteurs sur les textes et images</h1>
+<h2>Story Attribution</h2>
+{{ histoire.droitsHistoire }}
+
+<h2>Images Attributions</h2>
+{{ histoire.droitsImages }}
+<a href="{{ path('app_histoire_p1',{'idHistoire':histoire.id}) }}">Retour à la première page</a>
+
+{% for message in app.flashes('notice') %}
+    <div class="flash-notice">
+        <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto">Information</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            {{ message }}
+    </div>
+</div> 
+</div>
+
+{% endfor %}
+{% endblock %}

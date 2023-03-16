@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Etape index{% endblock %}
+
+{% block body %}
+
+<img src="{{ asset('images/'~page.nomFichier) }}"/>
+<a href="{{ path('app_histoire_page',{'idHistoire':page.histoire.id,'numPage':page.numPage+1}) }}">Lire la suite</a>
+{% endblock %}
